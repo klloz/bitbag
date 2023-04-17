@@ -26,9 +26,6 @@ class Product extends BaseProduct
         self::COLOR_RED,
     ];
 
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
     #[ORM\Column(type: Types::STRING, length: 64, nullable: true)]
     private string $color;
 
