@@ -17,10 +17,10 @@ class ProductTypeExtension extends AbstractTypeExtension
         $builder
             ->add('color', EnumType::class, [
                 'class' => Color::class,
-                'label' => 'form.product.color',
+                'label' => 'product.color',
                 'required' => false,
                 'choice_label' => function (?Color $color) {
-                    return $color ? 'form.product.colors.' . $color->value : '';
+                    return $color ? 'product.colors.' . $color->value : '';
                 },
             ]);
     }
