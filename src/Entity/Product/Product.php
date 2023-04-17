@@ -26,6 +26,7 @@ class Product extends BaseProduct
         self::COLOR_RED,
     ];
 
+    // todo maybe as enum?
     #[ORM\Column(type: Types::STRING, length: 64, nullable: true)]
     private string $color;
 
