@@ -20,6 +20,7 @@ class ProductTypeExtension extends AbstractTypeExtension
             ->add('color', ChoiceType::class, [
                 'choices' => Product::ALL_COLORS,
                 'required' => false,
+//                'label' => 'form.product.color',
                 'label' => 'Color', // todo use translations, for choices as well
                 'choice_label' => function ($key, $value) {
                     return $key;
