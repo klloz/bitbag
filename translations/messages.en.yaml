@@ -1,3 +1,7 @@
 form:
     product:
         color: Color
+        colors:
+            blue: Blue
+            green: Green
+            red: Red

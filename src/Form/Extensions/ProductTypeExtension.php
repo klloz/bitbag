@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Form\Extensions;
 
-use App\Entity\Product\Product;
+use App\Entity\Product\Color;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductType;
 use Symfony\Component\Form\AbstractTypeExtension;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class ProductTypeExtension extends AbstractTypeExtension
@@ -15,13 +15,12 @@ class ProductTypeExtension extends AbstractTypeExtension
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('color', ChoiceType::class, [
-                'choices' => Product::ALL_COLORS,
+            ->add('color', EnumType::class, [
+                'class' => Color::class,
+                'label' => 'form.product.color',
                 'required' => false,
-//                'label' => 'form.product.color',
-                'label' => 'Color', // todo use translations, for choices as well
-                'choice_label' => function ($key, $value) {
-                    return $key;
+                'choice_label' => function (?Color $color) {
+                    return $color ? 'form.product.colors.' . $color->value : '';
                 },
             ]);
     }

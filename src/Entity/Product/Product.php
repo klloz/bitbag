@@ -7,31 +7,20 @@ namespace App\Entity\Product;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Product as BaseProduct;
-use Sylius\Component\Product\Model\ProductTranslationInterface;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'sylius_product')]
 class Product extends BaseProduct
 {
-    const COLOR_BLUE = 'blue';
-    const COLOR_GREEN = 'green';
-    const COLOR_RED = 'red';
-    const ALL_COLORS = [
-        self::COLOR_BLUE,
-        self::COLOR_GREEN,
-        self::COLOR_RED,
-    ];
+    #[ORM\Column(type: Types::STRING, length: 64, nullable: true, enumType: Color::class)]
+    private ?Color $color;
 
-    // todo maybe as enum?
-    #[ORM\Column(type: Types::STRING, length: 64, nullable: true)]
-    private string $color;
-
-    public function getColor(): string
+    public function getColor(): ?Color
     {
         return $this->color;
     }
 
-    public function setColor(string $color): void
+    public function setColor(?Color $color): void
     {
         $this->color = $color;
     }
