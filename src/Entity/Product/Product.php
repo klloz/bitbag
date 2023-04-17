@@ -9,10 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 use Sylius\Component\Product\Model\ProductTranslationInterface;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="sylius_product")
- */
 #[ORM\Entity]
 #[ORM\Table(name: 'sylius_product')]
 class Product extends BaseProduct
@@ -29,11 +25,6 @@ class Product extends BaseProduct
     // todo maybe as enum?
     #[ORM\Column(type: Types::STRING, length: 64, nullable: true)]
     private string $color;
-
-    protected function createTranslation(): ProductTranslationInterface
-    {
-        return new ProductTranslation();
-    }
 
     public function getColor(): string
     {

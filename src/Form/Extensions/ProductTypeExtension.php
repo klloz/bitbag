@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace App\Form\Extensions;
 
-use App\Entity\Product\Color;
 use App\Entity\Product\Product;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class ProductTypeExtension extends AbstractTypeExtension

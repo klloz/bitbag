@@ -11,7 +11,7 @@ final class Version20230417124108 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Add `color` column to the table with products';
     }
 
     public function up(Schema $schema): void
