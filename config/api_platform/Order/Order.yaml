@@ -1,0 +1,8 @@
+'%sylius.model.order.class%':
+    itemOperations:
+        shop_get:
+            method: GET
+            path: /shop/orders/{tokenValue}
+            normalization_context:
+                groups:
+                    - shop:cart:read
