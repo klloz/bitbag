@@ -13,7 +13,7 @@ use Sylius\Component\Core\Model\Product as BaseProduct;
 class Product extends BaseProduct
 {
     #[ORM\Column(type: Types::STRING, length: 64, nullable: true, enumType: Color::class)]
-    private ?Color $color;
+    private ?Color $color = null;
 
     public function getColor(): ?Color
     {
