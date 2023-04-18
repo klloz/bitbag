@@ -10,6 +10,7 @@ use Sylius\Component\Core\Model\Order as BaseOrder;
 #[ORM\Entity]
 #[ORM\Table(name: 'sylius_order')]
 #[ORM\Index(['token_value'])]
+#[ORM\Index(['state', 'updated_at'])]
 class Order extends BaseOrder
 {
 }
